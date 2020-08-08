@@ -1,6 +1,8 @@
 package com.example.demotwo.student;
 
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -13,6 +15,10 @@ public class StudentController {
 
     @GetMapping("/student")
     @ApiOperation(value = "Return list with all students", response = List.class)
+    @ApiResponses(value = {
+            @ApiResponse(code = 500, message = "Error ...."),
+            @ApiResponse(code = 501, message = "Error 2 ....")
+    })
     public List<StudentClass> students(){
         return studentList;
     }
@@ -35,4 +41,7 @@ public class StudentController {
         studentList.add(newStudent);
         return newStudent;
     }
+
+
+
 }
