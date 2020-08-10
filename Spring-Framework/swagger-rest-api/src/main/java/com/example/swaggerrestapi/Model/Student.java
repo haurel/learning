@@ -9,8 +9,16 @@ import javax.persistence.*;
 public class Student {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "system-uuid")
-    @GenericGenerator(name = "system-uuid", strategy = "uuid")
+    //@GeneratedValue(strategy = GenerationType.AUTO, generator = "system-uuid")
+    //@GenericGenerator(name = "system-uuid", strategy = "uuid")
+    @GeneratedValue(
+            strategy = GenerationType.AUTO,
+            generator = "native"
+    )
+    @GenericGenerator(
+            name = "native",
+            strategy = "native"
+    )
     private String id;
     private String name;
     private String phone;
@@ -44,8 +52,6 @@ public class Student {
         this.phone = phone;
     }
 
-    public void setAge(Integer age){
-        this.age = age;
-    }
+    public void setAge(Integer age){ this.age = age; }
 
 }
