@@ -31,7 +31,7 @@ public class StudentController {
         for (int i = 0; i < 4; i++){
             Student tempStudent = new Student();
             tempStudent.setName(faker.name().fullName());
-            tempStudent.setAge(faker.number().numberBetween(10, 50));
+            tempStudent.setAge(faker.number().numberBetween(20, 50));
             tempStudent.setPhone(faker.phoneNumber().phoneNumber());
 
             studentService.saveStudent(tempStudent);
@@ -71,4 +71,11 @@ public class StudentController {
     public void deleteStudent(@PathVariable(name = "id") String id){
         studentService.deleteStudent(id);
     }
+
+
+    @RequestMapping(path = "/teststudent/", method = RequestMethod.POST)
+    public Student createStudent(@RequestBody Student student){
+        return studentService.createStudent(student);
+    }
+
 }

@@ -22,6 +22,8 @@ public class StudentService {
         this.studentRepository = studentRepository;
     }
 
+
+
     public Student getStudent(String id){
         LOG.info("Getting student with given id: " + id);
         return studentRepository.findById(id).orElse(null);
@@ -62,5 +64,9 @@ public class StudentService {
 
     public List<Student> getAllStudents() {
         return studentRepository.findAll();
+    }
+
+    public Student createStudent(Student student) {
+        return studentRepository.save(student);
     }
 }
