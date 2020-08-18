@@ -25,20 +25,34 @@ public class User {
 
     private String lastName;
 
-    private String mobilePhone;
+    private String mobileNumber;
+
+    private String password;
 
     private String role;
 
-    public User(String id, String email, String firstName, String lastName, String mobilePhone, String role){
-        this.id = id;
+    public User(String email, String firstName, String lastName, String mobileNumber, String password, String role) {
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.mobilePhone = mobilePhone;
+        this.mobileNumber = mobileNumber;
+        this.password = password;
         this.role = role;
     }
 
-    @OneToMany//(mappedBy = "id_user")
+    public User(){}
+
+    public User(String email, String firstName, String lastName, String mobileNumber, String password, String role, Car car) {
+        this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.mobileNumber = mobileNumber;
+        this.password = password;
+        this.role = role;
+        this.car.add(car);
+    }
+
+    @OneToMany
     @JoinColumn(name = "userId")
     private List<Car> car;
 
@@ -72,13 +86,15 @@ public class User {
         this.lastName = lastName;
     }
 
-    public String getMobilePhone() {
-        return mobilePhone;
+    public String getMobileNumber() {
+        return mobileNumber;
     }
 
-    public void setMobilePhone(String mobilePhone) {
-        this.mobilePhone = mobilePhone;
-    }
+    public void setMobileNumber(String mobileNumber) { this.mobileNumber = mobileNumber; }
+
+    public String getPassword() { return password; }
+
+    public void setPassword(String password) { this.password = password; }
 
     public String getRole() {
         return role;
@@ -88,35 +104,12 @@ public class User {
         this.role = role;
     }
 
-    public User(String email, String firstName, String lastName, String mobilePhone, String role) {
-        this.email = email;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.mobilePhone = mobilePhone;
-        this.role = role;
-    }
-    
-    public User(){}
+    public void setCar(Car car) { this.car.add(car); }
+
+    public List<Car> getCar(){ return this.car; }
 
     public String getFullName(){
         return firstName != null ? firstName.concat(" ").concat(lastName) : "";
-    }
-
-    public User(String email, String firstName, String lastName, String mobilePhone, String role, Car car) {
-        this.email = email;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.mobilePhone = mobilePhone;
-        this.role = role;
-        this.car.add(car);
-    }
-
-    public void setCar(Car car) {
-        this.car.add(car);
-    }
-
-    public List<Car> getCar(){
-        return this.car;
     }
 
 }

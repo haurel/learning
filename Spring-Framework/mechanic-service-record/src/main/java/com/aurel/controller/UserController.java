@@ -1,5 +1,6 @@
 package com.aurel.controller;
 
+import com.aurel.controller.request.UserSignupRequest;
 import com.aurel.model.User;
 import com.aurel.repository.UserRepository;
 import com.aurel.service.UserService;
@@ -31,7 +32,15 @@ public class UserController {
     }
 
     @PostMapping("/signup")
-    public User signup(@RequestBody User user){
+    public User signup(@RequestBody UserSignupRequest userSignupRequest){
+        User user = new User(
+                userSignupRequest.getEmail(),
+                userSignupRequest.getFirstName(),
+                userSignupRequest.getLastName(),
+                userSignupRequest.getMobileNumber(),
+                userSignupRequest.getPassword(),
+                "0"
+        );
         return userService.signup(user);
     }
 
