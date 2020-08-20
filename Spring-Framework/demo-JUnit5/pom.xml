@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.aurel</groupId>
-	<artifactId>demo</artifactId>
+	<artifactId>MockitoJUnit5</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>demo-JUnit5</name>
-	<description>Demo project for Spring Boot JUnit5 </description>
+	<name>MockitoJUnit5</name>
+	<description>Demo project for JUnit5</description>
 
 	<properties>
 		<java.version>11</java.version>
@@ -36,13 +36,8 @@
 			</exclusions>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-api</artifactId>
-			<version>5.7.0-RC1</version>
-			<scope>test</scope>
-		</dependency>
+
+
 
 	</dependencies>
 
@@ -52,6 +47,8 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
+
 		</plugins>
 	</build>
 
