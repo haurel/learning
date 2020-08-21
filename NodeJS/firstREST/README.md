@@ -1,7 +1,10 @@
-## npm init
-## npm install --save express
-## npm install --save-dev nodemon
-## npm install --save morgan
+npm init <br/>
+npm install --save express <br/>
+npm install --save-dev nodemon <br/>
+npm install --save morgan <br/>
+npm install --save body-parser <br/>
 
-RUN: npm start
-Nodemon -> auto-refresh server.js
+npm install --save mongoose <br/>
+
+RUN: npm start <br/>
+Nodemon -> auto-refresh server.js <br/>
