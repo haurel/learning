@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.aurel</groupId>
-	<artifactId>demo</artifactId>
+	<artifactId>Mechanic-Service-Record</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Mechanic Service Record</name>
 	<description>Demo project for Spring Boot</description>
@@ -28,7 +28,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-rest</artifactId>
 		</dependency>
-	<!--	<dependency>
+		<!--<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency> -->
@@ -103,8 +103,8 @@
 			<artifactId>spring-jdbc</artifactId>
 			<version>5.2.8.RELEASE</version>
 		</dependency>
-<!--
-		<dependency>
+
+	<!--	<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
