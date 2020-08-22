@@ -12,16 +12,12 @@ const bodyParser = require('body-parser');
 
 mongoose.connect(
     '',
-<<<<<<< HEAD
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useCreateIndex: true,
         useFindAndModify: false
     }
-=======
->>>>>>> 978e22aa9d0e0550b4cb8c5db49942cc3fb881f4
-)
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
