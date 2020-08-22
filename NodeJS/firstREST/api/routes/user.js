@@ -79,7 +79,6 @@ router.post('/', (req, res, next)=>{
 
 router.get('/:id', (req, res, next)=>{
     const id = req.params.id; 
-
     User.findById(id)
         .exec()
         .then(doc =>{      
@@ -94,8 +93,35 @@ router.get('/:id', (req, res, next)=>{
                     url: 'http://localhost:3000/user',
                 }
             }
-            
-            
+                
+                
+            if(doc){
+                res.status(200).json(personalResponse);
+            }else{
+                res.status(404).json({
+                    message: "No valid entry found for provided ID"
+                })
+            }
+        })
+        .catch(err =>{
+            res.status(500).json({error: err});
+        })
+    /*User.findOne({ firstName : id})
+        .exec()
+        .then(doc =>{      
+            const personalResponse = {
+                firstName: doc.firstName,
+                lastName: doc.lastName,
+                fullName: doc.firstName + " " + doc.lastName,
+                _id: doc._id,
+                request: {
+                    type: 'GET',
+                    description: 'Get all users',
+                    url: 'http://localhost:3000/user',
+                }
+            }
+                
+                
             if(doc){
                 res.status(200).json(personalResponse);
             }else{
@@ -107,9 +133,10 @@ router.get('/:id', (req, res, next)=>{
         .catch(err =>{
             console.log(err);
             res.status(500).json({error: err});
-        })
-
+        })*/
 });
+
+
 
 router.patch('/:id', (req, res, next)=>{
     const id = req.params.id;
