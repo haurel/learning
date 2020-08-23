@@ -21,6 +21,7 @@
     "chai": "^4.2.0",
     "chai-like": "^1.1.1",
     "chai-things": "^0.2.0",
+    "faker": "^4.1.0",
     "mocha": "^8.1.1",
     "nodemon": "^2.0.4"
   }
