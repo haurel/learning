@@ -18,6 +18,7 @@ mongoose.connect(
         useCreateIndex: true,
         useFindAndModify: false
     }
+)
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
