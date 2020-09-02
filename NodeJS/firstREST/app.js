@@ -11,7 +11,7 @@ const bodyParser = require('body-parser');
 
 
 mongoose.connect(
-    '',
+    'mongodb+srv://root:rootpass@cluster0.ajh8h.mongodb.net/<dbname>?retryWrites=true&w=majority',
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
