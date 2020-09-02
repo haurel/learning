@@ -11,9 +11,11 @@
     <body>
         @include('inc.navbar')
         <main role="main" class="container"> 
-                @yield('content')
+            @include('inc.messages')
+            @yield('content')
         </main>
         
-        
+        <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+        <script> CKEDITOR.replace('article-ckeditor'); </script>
     </body>
 </html>
