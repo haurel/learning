@@ -34,5 +34,23 @@ namespace helloREST.Controllers
 
             return Ok(product);
         }
+        
+        public async Task<ActionResult> UpdateProduct(ProductMongoDB product){
+            await _repository.Update(product);
+
+            return Ok(product);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult> UpdateProductById(string id, ProductMongoDB product){
+            await _repository.UpdateById(product, id);
+
+            return Ok(product);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task DeleteProductById(string id){
+             await _repository.Delete(id);
+        }
     }
 }

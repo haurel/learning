@@ -57,5 +57,19 @@ namespace helloREST.Data
                 throw;  
             } 
         }
+
+        public async Task UpdateById(ProductMongoDB product, string id){
+            try  
+            {  
+               FilterDefinition<ProductMongoDB> filter = Builders<ProductMongoDB>.Filter.Eq("Id", id);  
+               product.Id = id;
+                var result = await db.Product.ReplaceOneAsync(filter, product);
+                
+            }  
+            catch  
+            {  
+                throw;  
+            }
+        }
     }
 }
