@@ -22,7 +22,7 @@
     "chai-like": "^1.1.1",
     "chai-things": "^0.2.0",
     "faker": "^4.1.0",
-    "mocha": "^8.1.1",
+    "mocha": "^8.4.0",
     "nodemon": "^2.0.4"
   }
 }
